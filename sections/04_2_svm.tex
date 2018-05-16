@@ -1,0 +1,19 @@
+\subsection{Support-Vector-Machine}
+Da es sich bei der Problemstellung um eine Klassifikation von zwei statischen Klassen handelt, ist der Einsatz einer Support-Vector-Machine (SVM) denkbar. Besonders die große Dimension der Merkmalsvektoren ist hierbei ein Grund zur Wahl einer SVM. In dieser Arbeit werden dabei der \glqq Radial Basic Function\grqq{} (RBF) Kernel sowie ein linearer Kernel verwendet.
+Die in dieser Arbeit implementierte SVM wird mit Hilfe des Framework \textit{sklearn} umgesetzt. Um eine für die SVM möglichst aussagekräftige Statistik zu erhalten und die bestmöglichen Parameter zu ermitteln, erfolgt bei der Evaluation eine  Kreuzvalidierung. Zudem werden bei der Verwendung der \textit{sklearn}-SVM die Parameter $\gamma$ und $C$ variiert um ein Over- und Underfitting zu vermeiden.
+
+Das Resultat zur Wahl der Parameter zeigt hierbei, dass bei einer Wahl des Paramaters $C=1$ und des zusätzlichen Parameters $\gamma = 0.0977$ für eine SVM mit RBF Kernel, bereits eine Genauigkeit (engl. \glqq Accuracy\grqq{} (ACC)) von ca. 99\% erreicht werden kann (siehe Abbildung \ref{fig:c_chooseSVM} und \ref{fig:gamma_chooseSVM}).
+
+\begin{figure}[h!]
+\centering
+\include{graphs/SVM_accuracy_ParameterC}
+\caption{\em Wahl des Parameter C mit Hilfe einer Kreuzvalidierung für eine SVM mit linearem und RBF Kernel}
+\label{fig:c_chooseSVM}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\include{graphs/SVM_accuracy_ParameterGamma}
+\caption{\em Wahl des Parameter $\gamma$ mit Hilfe einer Kreuzvalidierung für eine SVM mit linearem und RBF Kernel}
+\label{fig:gamma_chooseSVM}
+\end{figure}

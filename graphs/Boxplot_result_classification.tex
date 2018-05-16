@@ -1,0 +1,85 @@
+% This file was created by matplotlib2tikz v0.6.17.
+\begin{tikzpicture}[scale=.8,transform shape]
+
+\definecolor{color0}{rgb}{1,0.498039215686275,0.0549019607843137}
+
+\begin{axis}[
+ylabel={Werte in Spalte \textit{result}},
+xmin=0.5, xmax=2.5,
+ymin=-0.5, ymax=10.5,
+xtick={1,2},
+xticklabels={ASD Classified,No ASD Classified},
+tick align=outside,
+tick pos=left,
+x grid style={white!69.01960784313725!black},
+y grid style={white!69.01960784313725!black}
+]
+\addplot [black, forget plot]
+table {%
+0.925 7
+1.075 7
+1.075 9
+0.925 9
+0.925 7
+};
+\addplot [black, forget plot]
+table {%
+1 7
+1 7
+};
+\addplot [black, forget plot]
+table {%
+1 9
+1 10
+};
+\addplot [black, forget plot]
+table {%
+0.9625 7
+1.0375 7
+};
+\addplot [black, forget plot]
+table {%
+0.9625 10
+1.0375 10
+};
+\addplot [black, forget plot]
+table {%
+1.925 3
+2.075 3
+2.075 5
+1.925 5
+1.925 3
+};
+\addplot [black, forget plot]
+table {%
+2 3
+2 0
+};
+\addplot [black, forget plot]
+table {%
+2 5
+2 6
+};
+\addplot [black, forget plot]
+table {%
+1.9625 0
+2.0375 0
+};
+\addplot [black, forget plot]
+table {%
+1.9625 6
+2.0375 6
+};
+\addplot [color0, forget plot]
+table {%
+0.925 8
+1.075 8
+};
+\addplot [color0, forget plot]
+table {%
+1.925 4
+2.075 4
+};
+\end{axis}
+
+\end{tikzpicture}

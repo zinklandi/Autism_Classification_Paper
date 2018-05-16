@@ -1,0 +1,11 @@
+\subsection{K-Nearest-Neighbour} \label{sec:kneighbour}
+Neben der Support-Vector-Machine dient der Algorithmus K-Nearest-Neighbour ebenso sehr gut zur Unterscheidung der zwei Klassen einer positiven und negativen Autismus Diagnose. Innerhalb der Auswertung des Algorithmus werden hierzu die Anzahl der $k$ nächsten Nachbarn variiert und eine Kreuzvalidierung der Daten durchgeführt.
+
+Das Ergebnis des Algorithmus zeigt dabei nach Abbildung \ref{fig:k_neighbours}, dass bei einer Anzahl von $k=15$ Nachbarn für den Datensatz mit dem Merkmal \textit{result} eine Trennschärfe von 99\% erreicht werden kann. Im Vergleich dazu erreicht der Algorithmus ohne das Merkmal \textit{result} mit der Wahl $k=20$ eine Trennschärfe von 96\%. Die bessere Trennschärfe bei der Verwendung des zusätzlichen Merkmals ist dabei auf das Ergebnis aus der Datenanalyse zur Einteilung der Klassifikation anhand der Spalte \textit{result} zurückzuführen.
+
+\begin{figure}[h!]
+\centering
+\input{graphs/knearest_choosek}
+\caption{\em Errechnete Fehlerraten unter der Variation der Anzahl der Nachbarn}
+\label{fig:k_neighbours}
+\end{figure}

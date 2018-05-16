@@ -1,0 +1,61 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage[german]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[backend=biber,style=numeric,sorting=ynt]{biblatex}
+\addbibresource{library.bib}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{textcomp}
+\usepackage{pdfpages}
+\usepackage[utf8]{inputenc}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\usepackage{geometry}
+\geometry{
+  left=1.5cm,
+  right=1.5cm,
+  top=1.5cm,
+  bottom=2.4cm
+}
+\begin{document}
+
+\title{Maschinelles Lernen in der Diagnostik einer Autismus-Spektrum-Störung bei Erwachsenen}
+
+\author{\IEEEauthorblockN{Andreas Zinkl}
+\IEEEauthorblockA{OTH Regensburg\\
+Regensburg, Deutschland \\
+andreas.zinkl@st.oth-regensburg.de}}
+
+\maketitle
+
+\begin{abstract}
+In dieser Arbeit wird der Einsatz von Algorithmen aus dem Bereich des maschinellen Lernens zur hinreichenden Diagnose von Autismus-Spektrum-Störungen bei Erwachsenen untersucht. Die in dieser Arbeit verwendeten Open Source Daten enthalten dabei die Antworten eines Interviews basierend auf den DSM\footnote{\label{foot:1}Abkürzung für \glqq Diagnostic and Statistical Manual of Mental Disorders\grqq{}.}-5 Diagnosekriterien. Neben diesen Antworten enthält der Datensatz weitere individuelle Informationen zu den befragten Personen. Innerhalb der Arbeit werden dabei mit fast allen Algorithmen sehr gute Resultate für eine hinreichende Diagnose mit einer Genauigkeit von bis zu ca. 99\% erreicht.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Maschinelles Lernen, Autismus, Autismus-Spetkrum-Störung, Diagnose, DSM-5
+\end{IEEEkeywords}
+
+%%%% CHAPTERS START
+
+\input{sections/01_introduction}
+\input{sections/02_preprocessing}
+\input{sections/03_features}
+\input{sections/04_0_algorithms}
+\input{sections/04_1_decisiontree} %TODO
+\input{sections/04_2_svm}
+\input{sections/04_3_knearest}
+\input{sections/04_4_kmean} %TODO
+\input{sections/05_evaluation} %TODO
+\input{sections/06_fazit} %TODO
+
+%%%% CHAPTERS END
+
+
+\printbibliography
+
+\end{document}
