@@ -2,9 +2,10 @@
 Zu Beginn der Vorverarbeitung ist es zunächst notwendig den Informationsgehalt des Open Source Datensatzes zu analysieren. Im Anschluss daran können in der Datenaufbereitung fehlende Werte interpoliert und Ausreißer gefiltert werden.
 
 \subsection{Beschreibung des Datensatzes}
-Der in dieser Arbeit verwendete Datensatz wurde von \textsc{Thabtah} \cite{Thabtah2017, Thabtah}, im Zuge seiner Arbeit zur Erstellung eines Konzepts für die Diagnose einer ASS, im Umfang von 704 Testresultaten gesammelt und veröffentlicht. Die Datensammlung basiert dabei auf den von der Organisation \textsc{NICE} \cite{NICE2012} beschriebenen Richtlinien zur Diagnose von ASS mit Hilfe des AQ\footnote{\label{foot:3}Test zur Berechnung des Autismus-Sepktrum-Quotienten.}-10. Eine Beschreibung des Datensatzes liegt der Veröffentlichung bei, enthält jedoch fehlerhafte sowie unzureichende Informationen und Zuordnungen. Hierzu wird im Rahmen der Arbeit der veröffentlichte Datensatz ergänzt und in Tabelle \ref{tbl:datensatz} beschrieben.
+Der in dieser Arbeit verwendete Datensatz wurde von \textsc{Thabtah} \cite{Thabtah2017, Thabtah}, im Zuge seiner Arbeit zur Erstellung eines Konzepts für die Diagnose einer ASS, im Umfang von 704 Testresultaten gesammelt und veröffentlicht. Die Datensammlung basiert dabei auf den von der Organisation \textsc{NICE} \cite{NICE2012} beschriebenen Richtlinien zur Diagnose einer ASS mit Hilfe des AQ\footnote{\label{foot:3}Test zur Berechnung des Autismus-Spektrum-Quotienten.}-10. Eine Beschreibung des Datensatzes liegt der Veröffentlichung bei, enthält jedoch fehlerhafte sowie unzureichende Informationen und Zuordnungen. Hierzu wird im Rahmen dieser Arbeit der veröffentlichte Datensatz ergänzt und in Tabelle \ref{tbl:datensatz} beschrieben.
 
 \begin{table}[htbp]
+\caption{Der Aufbau des Open Source Datensatzes}
 \begin{tabular}{l p{6cm}}
 \textbf{Attribut-Name} & \textbf{Beschreibung}\\ \hline
 age & Alter in Jahren\\
@@ -12,10 +13,10 @@ gender & Geschlecht männlich / weiblich\\
 ethnicity & Ethnische Herkunft der Person\\
 jaundice	 & Mit Gelbsucht geboren\\
 autism & Autismus-Diagnose innerhalb der Familie\\
-relation & Person die das Testverfahren durchführt\\
-country of res & Land des Wohnsitzes  \\
+relation & Person, die das Testverfahren durchführt\\
+country of residence & Land des Wohnsitzes  \\
 used app before & Screening-App bereits zuvor benutzt\\
-age desc & Gruppierung des Testverfahren anhand des Alters\\
+age desc & Gruppierung des Testverfahrens anhand des Alters\\
 A1 & Antwort zur Frage 1 (Trifft zu = 1, sonst = 0)\\
 A2 & Antwort zur Frage 2 (Trifft zu = 0, sonst = 1)\\
 A3 & Antwort zur Frage 3 (Trifft zu = 0, sonst = 1)\\
@@ -27,35 +28,34 @@ A8 & Antwort zur Frage 8 (Trifft zu = 0, sonst = 1)\\
 A9 & Antwort zur Frage 9 (Trifft zu = 0, sonst = 1)\\
 A10 & Antwort zur Frage 10 (Trifft zu = 1, sonst = 0)\\
 result & Anhand der Antworten errechnetes Gesamtresultat\\
-classifiedASD & Mögliches diagnostiziertes ASS\\
+classifiedASD & Mögliche diagnostizierte ASS\\
 \end{tabular}
 \centering
-\caption{\em Der Aufbau des Open Source Datensatzes}
 \label{tbl:datensatz}
 \end{table}
 
 \subsection{Datenanalyse und -aufbereitung} \label{sec:analysis}
-Das Verfahren zur Zuordnung der einzelnen Datensätze zu den Werten in \textit{classifiedASD} wurde nach \textsc{Thabtah} \cite{Thabtah2017} dabei anhand der von \textsc{NICE} \cite{NICE2012} beschriebenen Richtlinien zur Diagnose durchgeführt. Dieses führt zur in Abbildung \ref{fig:result_classification} dargestellten Verteilung der Daten anhand der Spalten \textit{result} und \textit{classifiedASD}. Dabei ist erkennbar, das die Zuordnung bereits mit Hilfe der Spalte \textit{result} durchführbar ist.
+Das Verfahren zur Zuordnung der einzelnen Datensätze zu den Werten in \textit{classifiedASD} wurde nach \textsc{Thabtah} \cite{Thabtah2017} dabei anhand der von \textsc{NICE} \cite{NICE2012} beschriebenen Richtlinien zur ASS-Diagnose durchgeführt. Dies führt zur in Abbildung \ref{fig:result_classification} dargestellten Verteilung der Daten anhand der Spalten \textit{result} und \textit{classifiedASD}. Dabei ist erkennbar, dass eine eindeutige Zuordnung bereits mit Hilfe der Spalte \textit{result} durchführbar ist.
 
 \begin{figure}[h!]
 \centering
 \input{graphs/Boxplot_result_classification}
-\caption{\em Zuordnung der Datensätze in Abhängigkeit der Werte des Attributes \textit{result}}
+\caption{\em Zuordnung der Datensätze in Abhängigkeit der Werte des Attributes \glqq \textit{result}\grqq}
 \label{fig:result_classification}
 \end{figure}
 
-Im Verlauf der Arbeit werden jedoch auch weitere Merkmale verwendet um die Untersuchung der Klassifikation anhand der abgegeben Antworten und Verhaltensweisen der Personen zu entwickeln. Um weitere Merkmale verwenden zu können wird hierzu eine Datenaufbereitung durchgeführt.
+Im Verlauf der Arbeit werden jedoch auch weitere Merkmale verwendet, um die Klassifikation anhand der abgegebenen Antworten und Verhaltensweisen der Personen zu untersuchen. Um weitere Merkmale verwenden zu können, wird hierzu eine Datenaufbereitung durchgeführt.
 
 % Vorverarbeitung 
 %		-> Fehler ausgebessert / gefiltert
 %		-> Normalisierung
 %		-> usw..
 %		-> Reduktion macht hierbei keinen Sinn! Daten sind bereits stark vereinfacht
-Innerhalb der Datenaufbereitung wird in der ersten Analyse eine Filterung von Ausreißern mit fehlerhaften und fehlenden Informationen durchgeführt. Dabei werden aufgrund von fehlenden Informationen bei den Attributen \glqq ethnicity\grqq, \glqq relation\grqq{} und \glqq age\grqq{}, 95 Datensätze für die weitere Verarbeitung entfernt.
+Innerhalb der Datenaufbereitung werden in der ersten Analyse Ausreißer mit fehlerhaften und fehlenden Informationen herausgefiltert. Dabei werden aufgrund von fehlenden Informationen bei den Attributen \textit{ethnicity}, \textit{relation} und \textit{age}, 95 Datensätze für die weitere Verarbeitung entfernt.
 
-Für eine eindeutige Klassifikation ist es außerdem nötig die in den Attributen \glqq jaundice\grqq und \glqq autism\grqq {} enthaltenen nominalen Werte entsprechend zu Normalisieren. Hierbei werden die bool'schen Werte \glqq yes\grqq{} und \glqq no\grqq zu den numerischen Werten $1$ für \glqq yes\grqq und $0$ für \glqq no\grqq{} abgeändert. 
+Für eine eindeutige Klassifikation ist es außerdem notwendig, die in den Attributen \textit{jaundice} und \textit{autism} enthaltenen nominalen Werte entsprechend zu normalisieren. Hierbei werden die bool'schen Werte \glqq yes\grqq{} und \glqq no\grqq{} zu den numerischen Werten $1$ für \glqq yes\grqq{} und $0$ für \glqq no\grqq{} abgeändert. 
 
-Die ordinalen Werte im Attribut \glqq relation\grqq{} werden mit Hilfe der \glqq 1-aus-n\grqq{} (engl. \glqq One-hot\grqq) Kodierung aufbereitet. Dies bedeutet, dass für jeden Wert innerhalb des Attributes eine neue Spalte erzeugt wird. Dabei wird je Zeile in der dem Wert zugehörigen Spalte der Wert $1$ und in allen anderen Spalten des Attributes der Wert $0$ eingesetzt. Dies ergibt eine Matrix in der einer Person (repräsentiert durch eine Zeile $i$) ein einziger Wert des Attributes durch eine Markierung der Spalte $j$ mit Hilfe der Funktion $f_{\text{relation}}(i,j)=1$ zugewiesen wird.
+Die ordinalen Werte im Attribut \textit{relation} werden mit Hilfe der \glqq 1-aus-n\grqq{} (engl. \glqq one-hot\grqq) Kodierung aufbereitet. Dies bedeutet, dass für jeden Wert des Attributes eine neue Spalte erzeugt wird. Dabei wird der Wert in der zugehörigen Spalte auf $1$ und in allen anderen Spalten des Attributes auf $0$ gesetzt. %Dies ergibt eine Matrix in der einer Person (repräsentiert durch eine Zeile $i$) ein einziger Wert des Attributes durch eine Markierung der Spalte $j$ mit Hilfe der Funktion $f_{\text{relation}}(i,j)=1$ zugewiesen wird.
 
-Abschließend werden die numerischen Werte $x$ eines Attributes $X$ (\glqq age\grqq{} und \glqq result\grqq{}) normiert. In der Normierung wird dabei der maximale Wert des Attributes errechnet und der Anteil des aktuellen Wertes an dem maximalen Wert als normierter Wert ermittelt ($f_{\text{Normierung}}(x) = \frac{x}{\max(X)}$). Somit ergibt sich eine Normierung der Werte im Intervall $[0,1]$.
+Abschließend werden die numerischen Werte $x$ eines Attributes $X$ normiert. In der Normierung der Attribute \textit{age} und \textit{result} wird dabei der maximale Wert des Attributes errechnet und der Anteil des aktuellen Wertes an dem maximalen Wert als normierter Wert ermittelt ($f_{\text{Normierung}}(x) = \frac{x}{\max(X)}$). Somit ergibt sich eine Normierung der Werte im Intervall $[0,1]$.
 

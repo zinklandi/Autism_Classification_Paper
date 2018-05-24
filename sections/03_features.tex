@@ -1,18 +1,24 @@
 \section{Merkmalsextraktion}
-Basierend auf der Beschreibung des Open Source Datensatzes und der erfolgten Datenanalyse können zunächst folgende Merkmale extrahiert werden. Dabei wird ein Merkmalsvektor $\vec{v}_M$ ermittelt. Dieser enthält folgende Merkmale:
+Basierend auf der Beschreibung des Open Source Datensatzes und der erfolgten Datenanalyse können zunächst die in Tabelle \ref{tbl:features} dargestellten Merkmale extrahiert werden. Dabei wird in dieser Arbeit ein Merkmalsvektor $\vec{v}_M$ ermittelt.
 
-\begin{itemize}
-	\item \textbf{Index 0-9:} A1 - A10 (Antworten von Frage 1 bis 10)
-	\item \textbf{Index 10:} result
-	\item \textbf{Index 11:} age 
-	\item \textbf{Index 12:} gender
-	\item \textbf{Index 13:} jaundice
-	\item \textbf{Index 14:} autism
-	\item \textbf{Index 15:} relation self
-	\item \textbf{Index 16:} relation parent
-	\item \textbf{Index 17:} relation healthcare
-	\item \textbf{Index 18:} relation relative
-	\item \textbf{Index 19:} relation others
-\end{itemize}
+\begin{table}
+\caption{Index Beschreibung des Merkmalsvektors}
+\begin{tabular}{c p{5cm}}
+\textbf{Index} & \textbf{Attribut} \\ \hline
+0-9 & A1 - A10 (Antworten von Frage 1 bis 10)\\
+10 & result\\
+11 & age \\
+12 & gender\\
+13 & jaundice\\
+14 & autism\\
+15 & relation self\\
+16 & relation parent\\
+17 & relation healthcare\\
+18 & relation relative\\
+19 & relation others\\
+\end{tabular}
+\centering
+\label{tbl:features}
+\end{table}
 
-Somit ergibt sich durch die Merkmalsextraktion der Vektor $\vec{m} = (m_1, ..., m_n)^T$ mit $n = 20$ Merkmalen. Es ist jedoch zu Beachten, dass aufgrund der Datenanalyse das Merkmal \textit{result} die Problemstellung für den Datensatz bereits löst. Aus diesem Grund werden in der Merkmalsextraktion zwei Vektoren generiert. Dies der Merkmalsvektoren $\vec{m}_{\text{with-result}}$, welcher das Merkmal \textit{result} enthält, sowie ein Merkmalsvektor $\vec{m}_{\text{without-result}}$ der das Merkmal nicht enthält. Dies ermöglicht einen Vergleich, ob eine Diagnose ohne das Merkmal \textit{result} mit gleicher Qualität durchgeführt werden kann.
+Somit ergibt sich aus der Tabelle \ref{tbl:features} ein Merkmalsvektor $\vec{m} = (m_0, ..., m_n)^T$ mit $n = 19$ und insgesamt 20 Merkmalen. Es ist jedoch zu beachten, dass aufgrund der Datenanalyse, das Merkmal \textit{result} die Problemstellung für den Datensatz bereits löst. Aus diesem Grund werden in der Merkmalsextraktion zwei Vektoren generiert. Dies ist der Merkmalsvektor $\vec{m}_{\text{with-result}}$, welcher das Merkmal \textit{result} enthält, sowie ein Merkmalsvektor $\vec{m}_{\text{without-result}}$ der das Merkmal nicht enthält. Dies ermöglicht in der Evaluation einen Vergleich, ob eine Diagnose ohne das Merkmal \textit{result} mit gleicher Qualität durchgeführt werden kann.

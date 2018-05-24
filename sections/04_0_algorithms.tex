@@ -1,5 +1,5 @@
 \section{Auswahl der Algorithmen} \label{sec:algorithms}
-Die Auswahl geeigneter Algorithmen, fordert zunächst eine Einordnung der Problemstellung. Die Diagnose einer ASS kann dabei nach \textsc{Müller} und \textsc{Guido} \cite[S.~94]{Muller2016} zur Vorhersage einer Klassifikation zugeordnet werden. In dieser Arbeit werden unterschiedliche Algorithmen mit Hilfe von überwachtem und unüberwachtem Lernen \cite[S.~93]{Muller2016} gegenübergestellt. 
+Die Auswahl geeigneter Algorithmen fordert zunächst eine Einordnung der Problemstellung. Die Diagnose einer ASS kann dabei nach \textsc{Müller} und \textsc{Guido} \cite[S.~94]{Muller2016} zur Vorhersage einer Klassifikation zugeordnet werden. In dieser Arbeit werden nun unterschiedliche Algorithmen mit Hilfe von überwachtem und unüberwachtem Lernen \cite[S.~93]{Muller2016} gegenübergestellt. 
 Die in dieser Arbeit gegenübergestellten Algorithmen sind der Entscheidungsbaum (engl. \glqq Decision Tree\grqq), die Support-Vector-Machine (SVM), der K-Nearest-Neighbour sowie der K-Means. %Auf die ebenso mögliche Wahl einer Einklassen-Klassifzierung (engl. \glqq One Class Classification\grqq) wird in dieser Arbeit nicht eingegangen, da hierbei in der Klassifizierung Informationen in den Zusammenhängen der Daten verloren gehen.
 Zur Evaluation eines jeden Algorithmus dient die Berechnung der Genauigkeit bzw. Trennschärfe (engl. \glqq Accuracy\grqq{} (ACC)).
 
@@ -7,16 +7,16 @@ Zur Evaluation eines jeden Algorithmus dient die Berechnung der Genauigkeit bzw.
 \text{ACC} = \frac{\#\text{Richtige Diagnosen}}{\#\text{Durchgeführte Diagnosen}}
 \end{equation}
 
-Zudem wird zum näheren Vergleich der Genauigkeit in der Diagnose die Rate der richtig diagnostizierten Datensätze (engl. \glqq True Positive Rate\grqq{} (TPR)) und die Rate der fälschlicherweise diagnostizierten Datensätze (engl. \glqq False Positive Rate\grqq{} (FPR)) verwendet.
+Zudem wird zum näheren Vergleich der Genauigkeit in der Diagnose, die Rate der richtig diagnostizierten Datensätze (engl. \glqq True Positive Rate\grqq{} (TPR)) und die Rate der fälschlicherweise diagnostizierten Datensätze (engl. \glqq False Positive Rate\grqq{} (FPR)) verwendet.
 
 \begin{equation} \label{math:fpr}
-\text{FPR} = \frac{\#\text{Falsche Autismus-Klassifikationen}}{\#\text{Datensätze mit \textit{classifiedASD} = NO}}
+\text{FPR} = \frac{\#\text{Autismus-Klassifizierung von \textit{classifiedASD} = NO}}{\#\text{Datensätze mit \textit{classifiedASD} = NO}}
 \end{equation}
 
 {\setlength{\parindent}{0cm}
 \begin{equation} \label{math:tpr}
-\text{TPR} = \frac{\#\text{Richtige Autismus-Klassifikationen}}{\#\text{Datensätze mit \textit{classifiedASD} = YES}}
+\text{TPR} = \frac{\#\text{Autismus-Klassifikationen von \textit{classifiedASD} = YES}}{\#\text{Datensätze mit \textit{classifiedASD} = YES}}
 \end{equation}}
 
-Für jeden Algorithmus werden dabei 30\% der aufbereitenden  Daten (182 Datensätze) zum Training und 70\%  der Daten (427 Datensätze) zur Generierung einer aussagekräftigen Statistik zur Evaluation verwendet. Dabei werden jeweils 30\% der positiven ASS-Diagnosen und negativen ASS-Diagnosen für das Training verwendet, um eine gleichmäßige Verteilung innerhalb der Trainingsdaten zu erhalten. Die Aufteilung der Trainings- und Testdaten erfolgt dabei zufällig zur Laufzeit des Algorithmus. Bei der Auswahl der geeigneten Parameter (z.B. die Wahl des Parameter C im Algorithmus der SVM) wird in dieser Arbeit stets mit Hilfe einer Kreuzvalidierung (engl. \glqq Cross-Validation\grqq{}) durchgeführt.
+Für jeden Algorithmus werden dabei 30\% der aufbereiteten Daten (182 Datensätze) zum Training und 70\%  der Daten (427 Datensätze) zur Generierung einer aussagekräftigen Statistik zur Evaluation verwendet. Dabei werden je 30\% der positiven und negativen ASS-Diagnosen für das Training verwendet, um eine gleichmäßige Verteilung innerhalb der Trainingsdaten zu erhalten. Die Aufteilung der Trainings- und Testdaten erfolgt dabei zufällig zur Laufzeit des Algorithmus. Die Auswahl der geeigneten Parameter (z.B. der Wahl des Parameter C im Algorithmus der SVM) wird in dieser Arbeit stets mit Hilfe einer Kreuzvalidierung (engl. \glqq Cross-Validation\grqq{}) durchgeführt.
 

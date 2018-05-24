@@ -1,7 +1,9 @@
 \subsection{Evaluation der Algorithmen} \label{sec:evaluation}
-Die Ergebnisse der angewandten Algorithmen zeigen für die Problemstellung stets eine gute Trennschärfe (siehe Tabelle \ref{tbl:results_table_without} und \ref{tbl:results_table}). Der Vergleich der Algorithmen zeigt hierbei, dass anhand des Merkmals \textit{result} stets eine etwas bessere Trennschärfe erreicht wird. In der Datenanalyse in Kapitel \ref{sec:analysis} konnte hierzu bereits gezeigt werden, dass anhand des Merkmals \textit{result} die Problemstellung eindeutig gelöst werden kann. Dennoch ist zu bemerken, dass ein vermeiden des Merkmals kaum zu einer Verschlechterung der Algorithmen führt. Für die Anwendung in der Diagnose bieten sich somit vor allem der Algorithmus K Nearest Neighbour sowie die Support Vector Machine zur Verhaltensanalyse an. Dieser liefert im Vergleich die bestmögliche Trennschärfe unabhängig von der Verwendung des Merkmals \textit{result}.
+Die Ergebnisse der angewandten Algorithmen zeigen für die Problemstellung stets eine gute Trennschärfe (siehe Tabelle \ref{tbl:results_table_without} und \ref{tbl:results_table}).
 
 \begin{table}[htbp]
+\caption{Die Resultate der angewandten Algorithmen ohne das Merkmal \glqq result\grqq}
+\label{tbl:results_table_without}
 \begin{tabular}{l c c c}
 \textbf{Algorithmus} & \textbf{ACC} & \textbf{TPR} & \textbf{FPR} \\ \hline
 Decision Tree & 92.2\% & 85.0\% & 14.9\% \\
@@ -11,11 +13,11 @@ K Nearest Neighbour & 96.9\% & 93.0\% & 6.9\%\\
 K Means & 92.9\% & 78.2\% & 21.8\%\\ 
 \end{tabular}
 \centering
-\caption{\em Die Resultate angewandten Algorithmen ohne das Merkmal \glqq result\grqq}
-\label{tbl:results_table_without}
 \end{table}
 
 \begin{table}[htbp]
+\caption{Die Resultate der angewandten Algorithmen inkl. dem Merkmal \glqq result\grqq}
+\label{tbl:results_table}
 \begin{tabular}{l c c c}
 \textbf{Algorithmus} & \textbf{ACC} & \textbf{TPR} & \textbf{FPR} \\ \hline
 Decision Tree & 100\% & 100\% & 0\% \\
@@ -25,6 +27,6 @@ K Nearest Neighbour & 99.1\% & 96.7\% & 3.0\%\\
 K Means & 90.8\% & 77.1\% & 22.9\%\\ 
 \end{tabular}
 \centering
-\caption{\em Die Resultate angewandten Algorithmen inkl. dem Merkmal \glqq result\grqq}
-\label{tbl:results_table}
 \end{table}
+
+Ein Vergleich der Algorithmen zeigt hierbei, dass anhand des Merkmals \textit{result} stets eine bessere Trennschärfe erreicht wird. In der Datenanalyse in Kapitel \ref{sec:analysis} konnte diesbezüglich bereits gezeigt werden, dass anhand des Merkmals \textit{result} die Problemstellung eindeutig gelöst werden kann. Dennoch ist zu bemerken, dass ein Weglassen des Merkmals kaum zu einer Verschlechterung der Algorithmen führt. Für die Anwendung in der Diagnose bieten sich nach der Anwendung der Algorithmen vor allem der Algorithmus K-Nearest-Neighbour sowie die Support Vector Machine zur Verhaltensanalyse an. Diese liefern im Vergleich die beste Trennschärfe unabhängig von der Verwendung des Merkmals \textit{result}.
