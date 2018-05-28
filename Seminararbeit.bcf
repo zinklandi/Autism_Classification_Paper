@@ -2147,19 +2147,21 @@
     <bcf:citekey order="2">VanElst2014</bcf:citekey>
     <bcf:citekey order="3">Thabtah2017</bcf:citekey>
     <bcf:citekey order="3">VanElst2014</bcf:citekey>
-    <bcf:citekey order="4">Thabtah2017</bcf:citekey>
-    <bcf:citekey order="4">Thabtah2018</bcf:citekey>
+    <bcf:citekey order="4">VanElst2014</bcf:citekey>
     <bcf:citekey order="5">Thabtah2017</bcf:citekey>
-    <bcf:citekey order="5">Thabtah</bcf:citekey>
-    <bcf:citekey order="6">NICE2012</bcf:citekey>
-    <bcf:citekey order="7">Thabtah2017</bcf:citekey>
-    <bcf:citekey order="8">NICE2012</bcf:citekey>
-    <bcf:citekey order="9">Muller2016</bcf:citekey>
+    <bcf:citekey order="5">Thabtah2018</bcf:citekey>
+    <bcf:citekey order="6">Thabtah2017</bcf:citekey>
+    <bcf:citekey order="6">Thabtah</bcf:citekey>
+    <bcf:citekey order="7">NICE2012</bcf:citekey>
+    <bcf:citekey order="8">Thabtah2017</bcf:citekey>
+    <bcf:citekey order="9">NICE2012</bcf:citekey>
     <bcf:citekey order="10">Muller2016</bcf:citekey>
-    <bcf:citekey order="11">Thabtah2017</bcf:citekey>
-    <bcf:citekey order="11">Thabtah</bcf:citekey>
-    <bcf:citekey order="11">Thabtah2018</bcf:citekey>
+    <bcf:citekey order="11">Muller2016</bcf:citekey>
     <bcf:citekey order="12">NICE2012</bcf:citekey>
+    <bcf:citekey order="13">Thabtah2017</bcf:citekey>
+    <bcf:citekey order="13">Thabtah</bcf:citekey>
+    <bcf:citekey order="13">Thabtah2018</bcf:citekey>
+    <bcf:citekey order="14">NICE2012</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="ynt/global/" type="entry" sortscheme="ynt" sortnamekeyscheme="global" labelprefix="">
   <bcf:sorting>
